@@ -1,18 +1,15 @@
-{%extends "base.html"%}
+{% extends "base.html" %}
 
-{%block content%}
-{%for post in post_list%}
+{% block content %}
 
-<!-- post_list je iz List_View  -->
+{% for post in post_list %}
 <div class="post-entry">
     <h2>
-        <a href="">
-            {{post.title}}
-        </a>
+        <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
     </h2>
     <p>
-        {{post.body}}
+        {{ post.body }}
     </p>
 </div>
-{%endfor%}
-{%endblock content%}
+{% endfor %}
+{% endblock content %}
